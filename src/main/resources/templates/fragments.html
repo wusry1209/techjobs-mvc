@@ -27,7 +27,10 @@
     </div>
 </div>
 
-<div th:fragment="search" th:if="${jobs} and ${jobs.size()}">
+<div th:fragment="search" th:if="${jobs} and ${jobs.size()} != null">
+
+
+        <h1 th:text="${jobs.size() + ' Results'}"></h1>
 
     <table class="job-listing" th:each="job : ${jobs}">
         <tr th:each="item : ${job}">
